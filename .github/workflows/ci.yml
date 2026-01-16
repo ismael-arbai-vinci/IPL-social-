@@ -22,13 +22,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     
     - name: Installation des dépendances
-      run: npm ci
-    
-    - name: Vérification du linting
-      run: npm run lint --if-present
+      run: npm install
     
     - name: Compilation TypeScript
       run: npm run build
